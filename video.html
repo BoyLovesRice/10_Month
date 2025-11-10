@@ -6,36 +6,57 @@
     <title>our video</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="theme-color" content="#0b0b0b">
+    <style>
+      /* responsive iframe container */
+      .ratio {
+        position: relative;
+        width: 100%;
+        border: 1px solid var(--ring);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #000;
+      }
+      .ratio::before {
+        content: "";
+        display: block;
+        padding-top: 56.25%; /* 16:9 */
+      }
+      .ratio > iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    </style>
   </head>
   <body>
     <main class="fade-in">
       <section class="flow">
         <h1 class="center">our video</h1>
 
-        <div class="video-wrap">
-          <video id="vid" controls playsinline preload="metadata">
-            <source src="https://drive.google.com/uc?export=download&id=1XMmTGBSVxMHxpgYQnEGHHLqSDaVJ6KoD" type="video/mp4">
-          </video>
+        <div class="ratio video-wrap">
+          <!-- Google Drive preview player -->
+          <iframe
+            src="https://drive.google.com/file/d/1XMmTGBSVxMHxpgYQnEGHHLqSDaVJ6KoD/preview"
+            allow="autoplay"
+            allowfullscreen
+          ></iframe>
         </div>
 
         <p class="note center small">
-          when it ends, you’ll be taken to the letter — or you can <a href="letter.html">continue now</a>.
+          tip: if playback doesn’t start, click the player once to focus, then press <kbd>space</kbd> or <kbd>play</kbd>.
+        </p>
+
+        <p class="note center small">
+          when you’re ready, you can <a href="letter.html">continue to the letter</a>.
         </p>
 
         <div class="center" style="margin-top: 1.25rem;">
           <a class="button" href="index.html">← back</a>
-          <a class="button" href="letter.html">skip to letter →</a>
+          <a class="button" href="letter.html">continue to letter →</a>
         </div>
       </section>
     </main>
-
-    <script>
-      const v = document.getElementById('vid');
-      if (v) {
-        v.addEventListener('ended', () => {
-          setTimeout(() => { window.location.href = 'letter.html'; }, 700);
-        });
-      }
-    </script>
   </body>
 </html>
