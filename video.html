@@ -11,20 +11,24 @@
     <main class="fade-in">
       <section class="flow">
         <h1 class="center">our video</h1>
+
         <div class="video-wrap">
-          <!-- Replace src with your actual video file in assets/ -->
-          <video id="vid" controls playsinline preload="metadata" poster="">
-            <source src="assets/our-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+          <video id="vid" controls playsinline preload="metadata">
+            <source src="https://drive.google.com/uc?export=download&id=1XMmTGBSVxMHxpgYQnEGHHLqSDaVJ6KoD" type="video/mp4">
           </video>
         </div>
-        <p class="note center small">when it ends, you’ll be taken to the letter — or you can <a href="letter.html">continue now</a>.</p>
-        <div class="center">
+
+        <p class="note center small">
+          when it ends, you’ll be taken to the letter — or you can <a href="letter.html">continue now</a>.
+        </p>
+
+        <div class="center" style="margin-top: 1.25rem;">
           <a class="button" href="index.html">← back</a>
           <a class="button" href="letter.html">skip to letter →</a>
         </div>
       </section>
     </main>
+
     <script>
       const v = document.getElementById('vid');
       if (v) {
