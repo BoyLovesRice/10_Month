@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>the letter</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#0b0b0b">
+  </head>
+  <body>
+    <main class="fade-in">
+      <article class="card">
+        <h1>the letter</h1>
+        <hr>
+        <div class="letter" id="letter">
+To my love,
+
+[ paste your letter here — it will keep your line breaks ]
+
+With all my heart,
+Josh
+        </div>
+      </article>
+      <section class="row" style="margin-top:1rem; justify-content:space-between">
+        <a class="button" href="video.html">← back to video</a>
+        <a class="button" href="index.html">home</a>
+      </section>
+      <footer>this is just for us.</footer>
+    </main>
+    <script>
+      // Optional: if you want a super subtle type-in effect, toggle the flag to true
+      const enableTypewriter = false;
+      if (enableTypewriter) {
+        const el = document.getElementById('letter');
+        const text = el.textContent;
+        el.textContent = '';
+        let i=0;
+        const tick = () => {
+          el.textContent += text[i++] || '';
+          if (i < text.length) requestAnimationFrame(tick);
+        };
+        tick();
+      }
+    </script>
+  </body>
+</html>
